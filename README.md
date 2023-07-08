@@ -34,6 +34,7 @@ python PCsampling_demo_svd.py
 
 ## Checkpoints
 We provide pretrained checkpoints. You can download pretrained models from [Baidu cloud](https://pan.baidu.com/s/1vo6kpsu8pCgi_Mgw5PMEPw?pwd=gakz)
+https://pan.baidu.com/s/1vo6kpsu8pCgi_Mgw5PMEPw?pwd=gakz
 
 ## Graphical representation
 ### The whole pipeline of DD-UGM is illustrated in fig_1

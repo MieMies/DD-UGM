@@ -23,25 +23,22 @@ python PCsampling_demo_svd.py
 We provide pretrained checkpoints. You can download pretrained models from [Google Drive] (https://drive.google.com/file/d/1DmRTPmc_xYaVO3pX1R_CE0ZpiBRFkCwG/view?usp=sharing)
 
 ## Graphical representation
-### Pipeline of the prior learning process and PI reconstruction procedure in WKGM
-<div align="center"><img src="https://github.com/yqx7150/SVD-WKGM/blob/main/Fig-1.png" >  </div>
-Top line: Prior learning is conducted in weight-k-space domain at a single coil. Bottom line: PI reconstruction is conducted in iterative scheme that alternates between WKGM update and other traditional iterative methods.
+### The whole pipeline of DD-UGM is illustrated in fig_1
+<div align="center"><img src="https://github.com/MieMies/DD-UGM/tree/main/fig/fig_1.png" >  </div>
+The proposed DD-UGM method in dual-domain for DMRI reconstruction. (a) Universal generative model to learn the k-space prior information via de-noising score matching. (b) Universal generative model to learn the image prior information via denoising score matching. (c) Reconstruction to progressively remove aliasing and recover fine details via PC operation and low-rank prior. The red arrow represents the reconstruction process in the image domain while the green arrow indicates the reconstruction process in the k-space domain.
 
-### Illustration of the forward and reverse processes of k-space data.
-<div align="center"><img src="https://github.com/yqx7150/SVD-WKGM/blob/main/Fig-2.png" >  </div>
+### The key idea of VE-SED in k-space domain is visualized in fig_2.
+<div align="center"><img src="https://github.com/MieMies/DD-UGM/tree/main/fig/fig_2.png" >  </div>
+VE-SDE smoothly transforms a data distribution to a known prior distribu-tion by injecting noise in the k-space domain, and a corresponding reverse-time VE-SDE that transforms the prior distribution back into the k-space data distribution by removing the noise.
 
-###  K-space domain and weight-k-space domain.
-<div align="center"><img src="https://github.com/yqx7150/SVD-WKGM/blob/main/Fig-3.png" >  </div>
-(a) The reference k-space data and its amplitude values. (b) The weight-k-space data and its amplitude values. (c) The image obtained by applying the inverse Fourier
-encoding on k-space data. (d) The image obtained by applying the inverse Fourier encoding on weight-k-space data.
+###  The corresponding bidirectional process of VE-SDE in image domain is described in fig_3
+<div align="center"><img src="https://github.com/MieMies/DD-UGM/tree/main/fig/fig_3.png" >  </div>
+The corresponding bidirectional process of VE-SDE in image domain, which performs a slow noise injection process and noise removal process on dynamic MR images.
 
-### PI reconstruction results
-<div align="center"><img src="https://github.com/yqx7150/SVD-WKGM/blob/main/Fig-4.png" >  </div>
-PI reconstruction results by ESPIRiT, LINDBERG, EBMRec, SAKE, WKGM and SVD-WKGM on T2 Transversal Brain image at R=10 using 2D Poisson sampling mask. The intensity of residual maps is five times magnify.
 
 ### 
-<div align="center"><img src="https://github.com/yqx7150/SVD-WKGM/blob/main/Fig-5.png" >  </div>
-Convergence curves of WKGM and SVD-WKGM in terms of PSNR versus the iteration number when reconstructing the brain image from 1/3 sampled data under 2D Poisson sampling pattern.
+<div align="center"><img src="https://github.com/MieMies/DD-UGM/tree/main/fig/fig_4.png" >  </div>
+ Convergence curve of DD-UGM in terms of PSNR versus iterations.
 
 ## Acknowledgement
 The implementation is based on this repository: https://github.com/yang-song/score_sde_pytorch.
@@ -49,9 +46,6 @@ The implementation is based on this repository: https://github.com/yang-song/sco
 ## Other Related Projects    
 * Low-rank Tensor Assisted K-space Generative Model for Parallel Imaging Reconstruction  
 [<font size=5>**[Paper]**</font>](https://arxiv.org/ftp/arxiv/papers/2212/2212.05503.pdf)  [<font size=5>**[Code]**</font>](https://github.com/yqx7150/LR-KGM)     
-
-* Universal Generative Modeling in Dual-domain for Dynamic MR Imaging  
-[<font size=5>**[Paper]**</font>](https://arxiv.org/ftp/arxiv/papers/2212/2212.07599.pdf)  [<font size=5>**[Code]**</font>](https://github.com/yqx7150/DD-UGM) 
 
 * One-shot Generative Prior in Hankel-k-space for Parallel Imaging Reconstruction  
 [<font size=5>**[Paper]**</font>](https://arxiv.org/abs/2208.07181)   [<font size=5>**[Code]**</font>](https://github.com/yqx7150/HKGM)   [<font size=5>**[PPT]**</font>](https://github.com/yqx7150/HKGM/tree/main/PPT)
